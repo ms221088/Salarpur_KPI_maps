@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Salarpur Block - KPI Monitoring Maps (All-in-One)</title>
+<title>Salarpur Nigrani Darpan | सलारपुर निगरानी दर्पण</title>
 <style>
   :root {
     --ink:#1c2b2d; --paper:#f7f5f0; --panel:#fff; --line:#d8d3c4; --accent:#2f6f5e; --muted:#6b6f6a;
@@ -61,18 +61,26 @@
   .tcard .row { display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; } .tcard svg { flex:1 1 420px; max-width:640px; }
   .tcard table { border-collapse:collapse; font-size:.76rem; } .tcard td, .tcard th { padding:3px 8px; border-bottom:1px solid var(--line); text-align:right; white-space:nowrap; } .tcard th:first-child, .tcard td:first-child { text-align:left; }
   .tcard .sum { font-size:.8rem; margin:8px 0 0; line-height:1.5; } .tcard .note { font-size:.74rem; color:var(--muted); margin:6px 0 0; }
+  html[lang=hi] .en, html[lang=en] .hi { display:none !important; }
+  .langsw { position:absolute; right:0; top:0; display:flex; gap:0; } header { position:relative; }
+  .langsw button { font:inherit; font-size:.78rem; font-weight:600; padding:5px 12px; border:1px solid var(--accent); background:#fff; color:var(--accent); cursor:pointer; }
+  .langsw button:first-child { border-radius:5px 0 0 5px; } .langsw button:last-child { border-radius:0 5px 5px 0; border-left:0; }
+  .langsw button.on { background:var(--accent); color:#fff; }
+  .brand { margin:0 0 10px; padding-right:190px; } .bname { font-size:1.35rem; font-weight:800; color:var(--accent); letter-spacing:.2px; } .btag { font-size:.8rem; color:var(--muted); margin-top:2px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
+    <div class="langsw"><button id="lgHi" type="button">हिन्दी</button><button id="lgEn" type="button">English</button></div>
+    <div class="brand"><div class="bname"><span class="en">Salarpur Nigrani Darpan</span><span class="hi">सलारपुर निगरानी दर्पण</span></div><div class="btag"><span class="en">Random-sample monitoring of the block’s services · Salarpur Block, Budaun</span><span class="hi">ब्लॉक की सेवाओं की यादृच्छिक नमूना-आधारित निगरानी · सलारपुर ब्लॉक, बदायूँ</span></div></div>
     <h1><span class="kpi-code" id="kpicode">-</span><span id="kpititle">Salarpur Block KPI Monitoring</span></h1>
     <div class="desc" id="kpidesc"></div>
   </header>
 
   <div class="controls">
-    <div class="ctrlgroup"><label for="kpi">KPI</label><select id="kpi"><optgroup label="Health"><option value="1.1">1.1 — ANC registered within first trimester</option><option value="1.15(a)">1.15(a) — 4+ ANC visits (self-reported)</option><option value="1.15(b)">1.15(b) — 4+ ANC checkups (data completeness)</option><option value="1.16">1.16 — Children fully immunised (9-11 months)</option><option value="1.2">1.2 — Institutional deliveries</option><option value="1.5">1.5 — Hypertension screening (30+ yrs)</option><option value="1.6">1.6 — Diabetes screening (30+ yrs)</option></optgroup><optgroup label="1.15(b) sub-maps"><option value="1.15(b)-Hb">1.15(b)-Hb — Hb / Blood test</option><option value="1.15(b)-BP">1.15(b)-BP — Blood pressure check</option><option value="1.15(b)-Urine">1.15(b)-Urine — Urine test</option><option value="1.15(b)-Weight">1.15(b)-Weight — Weight check</option><option value="1.15(b)-Scan">1.15(b)-Scan — Sonography / ultrasound</option><option value="1.15(b)-TT">1.15(b)-TT — TT/Td injection</option><option value="1.15(b)-IFA">1.15(b)-IFA — Folic acid / IFA tablets</option></optgroup><optgroup label="ICDS"><option value="1.8">1.8 — Pregnant women taking Supplementary Nutrition</option><option value="1.9">1.9 — Children (6mo-6yr) taking Supplementary Nutrition</option><option value="1.10">1.10 — Measurement efficiency at AWCs</option><option value="1.11">1.11 — Height/length measured correctly (±1cm)</option><option value="1.12">1.12 — Weight measured correctly (±200gm)</option><option value="1.13">1.13 — Operational AWCs with functional toilets</option><option value="1.14">1.14 — Operational AWCs with drinking water</option></optgroup><optgroup label="Basic Infra"><option value="4.1">4.1 — Households with functional tap water (FHTC)</option></optgroup></select></div>
-    <div class="ctrlgroup"><label for="period">Period</label><select id="period"></select></div>
+    <div class="ctrlgroup"><label for="kpi"><span class="en">KPI</span><span class="hi">संकेतक</span></label><select id="kpi"><optgroup label="Health"><option value="1.1">1.1 — ANC registered within first trimester</option><option value="1.15(a)">1.15(a) — 4+ ANC visits (self-reported)</option><option value="1.15(b)">1.15(b) — 4+ ANC checkups (data completeness)</option><option value="1.16">1.16 — Children fully immunised (9-11 months)</option><option value="1.2">1.2 — Institutional deliveries</option><option value="1.5">1.5 — Hypertension screening (30+ yrs)</option><option value="1.6">1.6 — Diabetes screening (30+ yrs)</option></optgroup><optgroup label="1.15(b) sub-maps"><option value="1.15(b)-Hb">1.15(b)-Hb — Hb / Blood test</option><option value="1.15(b)-BP">1.15(b)-BP — Blood pressure check</option><option value="1.15(b)-Urine">1.15(b)-Urine — Urine test</option><option value="1.15(b)-Weight">1.15(b)-Weight — Weight check</option><option value="1.15(b)-Scan">1.15(b)-Scan — Sonography / ultrasound</option><option value="1.15(b)-TT">1.15(b)-TT — TT/Td injection</option><option value="1.15(b)-IFA">1.15(b)-IFA — Folic acid / IFA tablets</option></optgroup><optgroup label="ICDS"><option value="1.8">1.8 — Pregnant women taking Supplementary Nutrition</option><option value="1.9">1.9 — Children (6mo-6yr) taking Supplementary Nutrition</option><option value="1.10">1.10 — Measurement efficiency at AWCs</option><option value="1.11">1.11 — Height/length measured correctly (±1cm)</option><option value="1.12">1.12 — Weight measured correctly (±200gm)</option><option value="1.13">1.13 — Operational AWCs with functional toilets</option><option value="1.14">1.14 — Operational AWCs with drinking water</option></optgroup><optgroup label="Basic Infra"><option value="4.1">4.1 — Households with functional tap water (FHTC)</option></optgroup></select></div>
+    <div class="ctrlgroup"><label for="period"><span class="en">Period</span><span class="hi">अवधि</span></label><select id="period"></select></div>
     <div class="stat" id="statline"></div>
   </div>
 
@@ -80,11 +88,11 @@
   <div id="viewList">
     <div class="lt-bar"><div class="ttl" id="ltTitle"></div><button class="btn" id="btnXls" type="button">Export to Excel / एक्सेल में निर्यात करें</button></div>
     <div class="tblwrap"><table class="lt"><thead><tr>
-      <th class="num">Rank / क्रम</th><th>Gram Panchayat / ग्राम पंचायत</th><th>गाँव (हिन्दी)</th><th class="num">Rate / दर (%)</th><th class="num">Num / अंश</th><th class="num">Den / हर</th><th class="num">Visits / भ्रमण</th><th>Status / स्थिति</th><th>Beneficiary / लाभार्थी</th><th>Husband / Father / पति / पिता</th><th>Village / गाँव</th><th>Violation / उल्लंघन</th>
+      <th class="num">Rank / क्रम</th><th>Gram Panchayat / ग्राम पंचायत</th><th class="num">Rate / दर (%)</th><th class="num">Num / अंश</th><th class="num">Den / हर</th><th class="num">Visits / भ्रमण</th><th>Status / स्थिति</th><th>Beneficiary / लाभार्थी</th><th>Husband / Father / पति / पिता</th><th>Village / गाँव</th><th>Violation / उल्लंघन</th>
     </tr></thead><tbody id="ltBody"></tbody></table></div>
-    <p style="font-size:.74rem;color:var(--muted);margin:10px 0 0">Sorted from most critical (lowest rate) to least; each GP lists its non-compliant beneficiaries. GPs with no visit are listed last. / सबसे गंभीर (न्यूनतम दर) से शुरू; जिन GP में भ्रमण नहीं हुआ वे अंत में।</p>
+    <p style="font-size:.74rem;color:var(--muted);margin:10px 0 0"><span class="en">Sorted from most critical (lowest rate) to least; each GP lists its non-compliant beneficiaries. GPs with no visit are listed last.</span><span class="hi">सबसे गंभीर (न्यूनतम दर) से शुरू; प्रत्येक GP के अंतर्गत गैर-अनुपालन वाले लाभार्थी सूचीबद्ध हैं। जिन GP में भ्रमण नहीं हुआ वे अंत में हैं।</span></p>
   </div>
-  <div id="viewTrend" style="display:none"><p style="font-size:.78rem;color:var(--muted);margin:0 0 10px">Block-level quarterly trend for the selected KPI, from Aug 2023 up to the selected period (weighted average of all monitored visits). Hollow points are not comparable (see notes) and are left out of the change calculation. / चयनित संकेतक का ब्लॉक स्तर पर तिमाही रुझान (अगस्त 2023 से चयनित अवधि तक); खोखले बिंदु तुलनीय नहीं हैं (नोट देखें) और परिवर्तन की गणना में शामिल नहीं।</p><div style="font-size:.76rem;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:0 0 12px;background:#fcfbf7"><b>Legend / संकेत:</b> ● solid point = comparable quarter; ○ hollow point = not comparable or fewer than 5 visits (shown, but excluded from change calculation) / ● ठोस बिंदु = तुलनीय तिमाही; ○ खोखला बिंदु = तुलनीय नहीं या 5 से कम भ्रमण (दिखाया गया, पर परिवर्तन गणना से बाहर). <b>%</b> = Σ numerator ÷ Σ denominator of all visits in the quarter (weighted average), <b>n</b> = visits / भारित औसत = तिमाही के सभी भ्रमणों का अंश-योग ÷ हर-योग; n = भ्रमण. Aug–Sep 2023 is a part-quarter. / अगस्त–सितंबर 2023 आंशिक तिमाही है।</div><div id="trendBox"></div></div>
+  <div id="viewTrend" style="display:none"><p style="font-size:.78rem;color:var(--muted);margin:0 0 10px"><span class="en">Block-level quarterly trend for the selected KPI, from Aug 2023 up to the selected period (weighted average of all monitored visits). Hollow points are not comparable (see notes) and are left out of the change calculation.</span><span class="hi">चयनित संकेतक का ब्लॉक स्तर पर तिमाही रुझान, अगस्त 2023 से चयनित अवधि तक (सभी निगरानी भ्रमणों का भारित औसत)। खोखले बिंदु तुलनीय नहीं हैं (नोट देखें) और परिवर्तन की गणना में शामिल नहीं हैं।</span></p><div style="font-size:.76rem;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:0 0 12px;background:#fcfbf7"><span class="en"><b>Legend:</b> ● solid point = comparable quarter; ○ hollow point = not comparable or fewer than 5 visits (shown, but excluded from change calculation). <b>%</b> = Σ numerator ÷ Σ denominator of all visits in the quarter (weighted average), <b>n</b> = visits. Aug–Sep 2023 is a part-quarter. <b>◆ dashed grey line / State column</b> = state average (all UP CM-Fellow blocks pooled, same weighted method), available from Apr–Jun 2025 only (sheet starts Apr 2025); Jul–Sep 2026 values are as printed in the report (page 3). For 1.15(b), 1.11 and 1.12 only Jul–Sep 2026 is available.</span><span class="hi"><b>संकेत:</b> ● ठोस बिंदु = तुलनीय तिमाही; ○ खोखला बिंदु = तुलनीय नहीं या 5 से कम भ्रमण (दिखाया गया, पर परिवर्तन की गणना से बाहर)। <b>%</b> = तिमाही के सभी भ्रमणों का अंश-योग ÷ हर-योग (भारित औसत), <b>n</b> = भ्रमण। अगस्त–सितंबर 2023 आंशिक तिमाही है। <b>◆ धूसर बिंदीदार रेखा / राज्य स्तंभ</b> = राज्य औसत (उ.प्र. के सभी सीएम फेलो ब्लॉक, समान भारित विधि); केवल अप्रैल–जून 2025 से उपलब्ध; जुलाई–सितंबर 2026 के मान रिपोर्ट (पृष्ठ 3) अनुसार। 1.15(b), 1.11 व 1.12 के लिए केवल जुलाई–सितंबर 2026 उपलब्ध।</span></div><div id="trendBox"></div></div>
   <div id="viewMap"><div class="mapzone">
     <div class="svgbox">
       <svg
@@ -5186,7 +5194,7 @@
     </div>
     <div class="sidebar">
       <div class="legend">
-        <h3>Legend</h3>
+        <h3><span class="en">Legend</span><span class="hi">संकेत-सूची</span></h3>
         <div class="legend-row"><span class="swatch" style="background:var(--b7)"></span> 90 - 100%</div>
         <div class="legend-row"><span class="swatch" style="background:var(--b6)"></span> 75 - 89%</div>
         <div class="legend-row"><span class="swatch" style="background:var(--b5)"></span> 60 - 74%</div>
@@ -5195,21 +5203,21 @@
         <div class="legend-row"><span class="swatch" style="background:var(--b2)"></span> 15 - 29%</div>
         <div class="legend-row"><span class="swatch" style="background:var(--b1)"></span> 0 - 14%</div>
         <div class="legend-row" style="margin-top:10px; border-top:1px solid var(--line); padding-top:10px;">
-          <span class="swatch" style="background:var(--nodata)"></span> No monitoring visit in this period</div>
-        <div class="legend-row"><span class="swatch" style="background:var(--b7); opacity:.35"></span> Faint fill = few visits (low confidence)</div>
-        <div class="legend-row"><span class="swatch" style="background:var(--b7); opacity:1"></span> Solid fill = more visits (higher confidence)</div>
+          <span class="swatch" style="background:var(--nodata)"></span> <span class="en">No monitoring visit in this period</span><span class="hi">इस अवधि में कोई निगरानी भ्रमण नहीं</span></div>
+        <div class="legend-row"><span class="swatch" style="background:var(--b7); opacity:.35"></span> <span class="en">Faint fill = few visits (low confidence)</span><span class="hi">हल्का रंग = कम भ्रमण (कम विश्वसनीयता)</span></div>
+        <div class="legend-row"><span class="swatch" style="background:var(--b7); opacity:1"></span> <span class="en">Solid fill = more visits (higher confidence)</span><span class="hi">गहरा रंग = अधिक भ्रमण (अधिक विश्वसनीयता)</span></div>
       </div>
       <div class="notes">
-        <h3>About this map</h3>
-        <p><b>Data source:</b> Monitoring based on random sampling, entered via the AB Monitoring Portal.</p>
-        <p><b>Duration:</b> Aug 2023 - Sep 2026</p>
-        <p><b>Unit shown:</b> Gram Panchayat (GP) — values are the visit-weighted rate across all ASHA areas/villages monitored within that GP for the selected period. Fill opacity encodes number of visits (confidence), not the rate itself.</p>
-        <p><b>Note:</b> Monthly figures are the raw input; planning reviews these as quarterly weighted averages — use the Period dropdown to switch between All-time and individual quarters.</p>
-        <p><b>22 KPIs</b> in one file: 7 Health, 7 ICDS, 1 Basic Infra, and 7 ANC check-up sub-maps under 1.15(b). Switch using the KPI dropdown above.</p>
+        <h3><span class="en">About this map</span><span class="hi">इस मानचित्र के बारे में</span></h3>
+        <p><span class="en"><b>Data source:</b> Monitoring based on random sampling, entered via the AB Monitoring Portal.</span><span class="hi"><b>डेटा स्रोत:</b> यादृच्छिक नमूने पर आधारित निगरानी, एबी मॉनिटरिंग पोर्टल के माध्यम से दर्ज।</span></p>
+        <p><b><span class="en">Duration:</span><span class="hi">अवधि:</span></b> <span id="aboutDur"></span></p>
+        <p><span class="en"><b>Unit shown:</b> Gram Panchayat (GP) — values are the visit-weighted rate across all ASHA areas/villages monitored within that GP for the selected period. Fill opacity encodes number of visits (confidence), not the rate itself.</span><span class="hi"><b>प्रदर्शित इकाई:</b> ग्राम पंचायत (GP) — चयनित अवधि में उस GP के अंतर्गत निगरानी किए गए सभी आशा क्षेत्रों/गाँवों की भारित दर। रंग की गहराई भ्रमणों की संख्या (विश्वसनीयता) दर्शाती है, दर नहीं।</span></p>
+        <p><span class="en"><b>Note:</b> Monthly figures are the raw input; planning reviews these as quarterly weighted averages — use the Period dropdown to switch between All-time and individual quarters.</span><span class="hi"><b>नोट:</b> मासिक आँकड़े कच्चे इनपुट हैं; योजना समीक्षा में इन्हें तिमाही भारित औसत के रूप में देखा जाता है — सम्पूर्ण अवधि और अलग-अलग तिमाहियों के बीच बदलने के लिए अवधि ड्रॉपडाउन का उपयोग करें।</span></p>
+        <p><span class="en"><b>22 KPIs</b> in one file: 7 Health, 7 ICDS, 1 Basic Infra, and 7 ANC check-up sub-maps under 1.15(b). Switch using the KPI dropdown above.</span><span class="hi">एक ही फ़ाइल में <b>22 संकेतक</b>: 7 स्वास्थ्य, 7 आईसीडीएस, 1 आधारभूत संरचना और 1.15(b) के अंतर्गत 7 ANC जाँच उप-मानचित्र। ऊपर संकेतक ड्रॉपडाउन से बदलें।</span></p>
       </div>
     </div>
   </div></div>
-  <footer>Salarpur Block, Budaun · KPI monitoring map · all-in-one edition</footer>
+  <footer><span class="en">Salarpur Nigrani Darpan · random-sample monitoring · Salarpur Block, Budaun</span><span class="hi">सलारपुर निगरानी दर्पण · यादृच्छिक नमूना-आधारित निगरानी · सलारपुर ब्लॉक, बदायूँ</span></footer>
 </div>
 <div id="tooltip"></div>
 
@@ -5245,6 +5253,30 @@ const tooltip = document.getElementById('tooltip');
 const paths = document.querySelectorAll('path[data-lgd]');
 const gpPaths = document.querySelectorAll('path[data-type="gp"]');
 
+
+let LANG='hi'; try{ LANG=localStorage.getItem('lang')||'hi'; }catch(e){}
+function tl(s){ s=String(s==null?'':s); const m=s.match(/\s\/\s(?=[\u0900-\u097F])/); if(!m) return s; return LANG==='hi'?s.slice(m.index+m[0].length):s.slice(0,m.index); }
+const HIGP={}; gpPaths.forEach(p=>{ HIGP[p.getAttribute('data-lgd')]=p.getAttribute('data-name-hi')||''; });
+const MQ={en:['Jan–Mar','Apr–Jun','Jul–Sep','Oct–Dec'],hi:['जनवरी–मार्च','अप्रैल–जून','जुलाई–सितंबर','अक्टूबर–दिसंबर']};
+function plabL(p){ if(p==='ALL') return LANG==='hi'?'सम्पूर्ण अवधि (परिभाषा-सुसंगत विंडो; 1.14 का नोट देखें)':PLABELS.ALL; return LANG==='hi'?`Q${p[6]} ${p.slice(0,4)} (${MQ.hi[+p[6]-1]})`:PLABELS[p]||p; }
+function durText(p){ const M=LANG==='hi'?['','जनवरी','फ़रवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर']:['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  if(p==='ALL') return `${M[8]} 2023 – ${M[9]} 2026`; const y=p.slice(0,4), q=+p[6]; let a=3*q-2, b=3*q; if(p==='2023-Q3') a=8; return `${M[a]} – ${M[b]} ${y}`; }
+function kpiLabel(k){ return k+' — '+(LANG==='hi'?(THI[k]||META[k].title):(META[k]?META[k].title:k)); }
+function walkText(){ const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{ const t=n.parentNode&&n.parentNode.nodeName; return /^(SCRIPT|STYLE|OPTION|OPTGROUP|svg|text|tspan|path)$/i.test(t)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT; }}); let n; while(n=w.nextNode()){ if(n._o===undefined) n._o=n.nodeValue; if(/[\u0900-\u097F]/.test(n._o)) n.nodeValue=tl(n._o); } }
+function applyLang(){
+  document.documentElement.lang=LANG; try{localStorage.setItem('lang',LANG);}catch(e){}
+  document.getElementById('lgHi').classList.toggle('on',LANG==='hi'); document.getElementById('lgEn').classList.toggle('on',LANG==='en');
+  walkText();
+  const OG={'Health':'स्वास्थ्य','1.15(b) sub-maps':'1.15(b) उप-मानचित्र','ICDS':'आईसीडीएस','Basic Infra':'आधारभूत संरचना'};
+  kpiSel.querySelectorAll('optgroup').forEach(g=>{ g._o=g._o||g.label; g.label=LANG==='hi'?(OG[g._o]||g._o):g._o; });
+  kpiSel.querySelectorAll('option').forEach(o=>{ o.textContent=kpiLabel(o.value); });
+  periodSel.querySelectorAll('option').forEach(o=>{ o.textContent=plabL(o.value); });
+  update();
+  if(document.getElementById('viewList').style.display==='block') buildList();
+  if(document.getElementById('viewTrend').style.display==='block') buildTrends();
+}
+document.getElementById('lgHi').onclick=()=>{LANG='hi';applyLang();}; document.getElementById('lgEn').onclick=()=>{LANG='en';applyLang();};
+
 function currentData() { return ALLDATA[kpiSel.value] || {}; }
 
 function update() {
@@ -5262,24 +5294,25 @@ function update() {
     if (data[lgd] && data[lgd][period]) { matchedCount++; totalVisits += data[lgd][period].n; }
   });
   document.getElementById('statline').innerHTML =
-    `<b>${matchedCount}</b> / ${gpPaths.length} GPs with data &nbsp;·&nbsp; <b>${totalVisits}</b> visits in this period`;
+    LANG==='hi'?`<b>${matchedCount}</b> / ${gpPaths.length} GP में डेटा &nbsp;·&nbsp; इस अवधि में <b>${totalVisits}</b> भ्रमण`:`<b>${matchedCount}</b> / ${gpPaths.length} GPs with data &nbsp;·&nbsp; <b>${totalVisits}</b> visits in this period`;
+  document.getElementById('aboutDur').textContent=durText(period);
 
   const meta = META[kpiSel.value];
   document.getElementById('kpicode').textContent = kpiSel.value;
-  document.getElementById('kpititle').textContent = meta.title;
-  document.getElementById('kpidesc').textContent = meta.desc;
+  document.getElementById('kpititle').textContent = LANG==='hi'?(THI[kpiSel.value]||meta.title):meta.title;
+  document.getElementById('kpidesc').textContent = LANG==='hi'?'':meta.desc;
 }
 
 paths.forEach(p => {
   p.addEventListener('mousemove', e => {
     const lgd = p.getAttribute('data-lgd');
-    const gpName = GPNAMES[lgd] || p.getAttribute('data-name-en') || lgd;
+    const gpName = LANG==='hi'?(HIGP[lgd]||GPNAMES[lgd]||lgd):(GPNAMES[lgd] || p.getAttribute('data-name-en') || lgd);
     const isGp = p.getAttribute('data-type') === 'gp';
-    const ownName = isGp ? gpName : (p.id || gpName);
+    const ownName = isGp ? gpName : (LANG==='hi'?(p.getAttribute('data-name-hi')||p.id||gpName):(p.id || gpName));
     const data = currentData();
     const rec = data[lgd] ? data[lgd][periodSel.value] : null;
-    let body = rec ? `${rec.rate}% (${rec.num}/${rec.den}) &middot; ${rec.n} visit(s)` : 'No monitoring visit in this period';
-    const sub = isGp ? '' : `<div style="opacity:.7;font-size:.72rem;margin-bottom:4px;">GP: ${gpName}</div>`;
+    let body = rec ? (LANG==='hi'?`${rec.rate}% (${rec.num}/${rec.den}) &middot; ${rec.n} भ्रमण`:`${rec.rate}% (${rec.num}/${rec.den}) &middot; ${rec.n} visit(s)`) : (LANG==='hi'?'इस अवधि में कोई निगरानी भ्रमण नहीं':'No monitoring visit in this period');
+    const sub = isGp ? '' : `<div style="opacity:.7;font-size:.72rem;margin-bottom:4px;">${LANG==='hi'?'ग्राम पंचायत':'GP'}: ${gpName}</div>`;
     tooltip.innerHTML = `<b>${ownName}</b>${sub}${body}`;
     tooltip.style.left = (e.clientX+16)+'px'; tooltip.style.top = (e.clientY+16)+'px'; tooltip.style.opacity = 1;
   });
@@ -5306,45 +5339,47 @@ function buildList(){
     if(!a.rec||!b.rec) return a.rec?-1:b.rec?1:a.en.localeCompare(b.en);
     return a.rec.rate-b.rec.rate || b.rec.den-a.rec.den || a.en.localeCompare(b.en);
   });
-  document.getElementById('ltTitle').textContent=`${kpiSel.value} — ${META[kpiSel.value].title} · ${PLABELS[period]||period}`;
+  document.getElementById('ltTitle').textContent=`${kpiLabel(kpiSel.value)} · ${plabL(period)}`;
   listRows=[]; let html='';
   base.forEach((g,i)=>{
     const st=bandFor(g.rec?g.rec.rate:null), rank=g.rec?i+1:'-';
     const vs=g.v.length?g.v:[['','','','']];
     vs.forEach((v,j)=>{
-      const r={...g,rank,st:st[2],hex:st[1],ben:v[0],fam:v[1],vil:v[2],why:v[3],first:j===0,span:vs.length}; listRows.push(r); const c=g.rec;
+      const r={...g,rank,st:tl(st[2]),hex:st[1],ben:v[0],fam:v[1],vil:v[2],why:tl(v[3]),first:j===0,span:vs.length}; listRows.push(r); const c=g.rec;
       const rs=vs.length>1?` rowspan="${vs.length}"`:'';
-      const gp=j?'':`<td class="num"${rs}>${rank}</td><td${rs}>${g.en}</td><td${rs}>${g.hi}</td><td class="num"${rs}>${c?c.rate:'-'}</td><td class="num"${rs}>${c?c.num:'-'}</td><td class="num"${rs}>${c?c.den:'-'}</td><td class="num"${rs}>${c?c.n:'-'}</td><td${rs}><span class="pill"><i style="background:${st[0]}"></i>${st[2]}</span></td>`;
-      html+=`<tr${j?'':' style="border-top:2px solid var(--line)"'}>${gp}<td>${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td><td>${v[3]}</td></tr>`;
+      const gp=j?'':`<td class="num"${rs}>${rank}</td><td${rs}>${LANG==='hi'?(g.hi||g.en):g.en}</td><td class="num"${rs}>${c?c.rate:'-'}</td><td class="num"${rs}>${c?c.num:'-'}</td><td class="num"${rs}>${c?c.den:'-'}</td><td class="num"${rs}>${c?c.n:'-'}</td><td${rs}><span class="pill"><i style="background:${st[0]}"></i>${tl(st[2])}</span></td>`;
+      html+=`<tr${j?'':' style="border-top:2px solid var(--line)"'}>${gp}<td>${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td><td>${tl(v[3])}</td></tr>`;
     });
   });
   document.getElementById('ltBody').innerHTML=html;
 }
 const TR = {"1.1":{"2023-Q3":[43.2,16,37,37],"2023-Q4":[34.1,15,44,44],"2024-Q1":[27.3,9,33,33],"2024-Q2":[43.3,13,30,30],"2024-Q3":[34.0,18,53,53],"2024-Q4":[35.5,11,31,31],"2025-Q1":[18.2,4,22,22],"2025-Q2":[34.6,9,26,26],"2025-Q3":[46.4,13,28,28],"2025-Q4":[51.3,20,39,39],"2026-Q1":[51.6,16,31,31],"2026-Q2":[40.7,11,27,27],"2026-Q3":[60.0,18,30,30]},"1.15(a)":{"2023-Q3":[64.9,24,37,37],"2023-Q4":[47.7,21,44,44],"2024-Q1":[51.5,17,33,33],"2024-Q2":[46.7,14,30,30],"2024-Q3":[77.8,42,54,54],"2024-Q4":[61.8,21,34,34],"2025-Q1":[68.2,15,22,22],"2025-Q2":[80.8,21,26,26],"2025-Q3":[82.1,23,28,28],"2025-Q4":[74.4,29,39,39],"2026-Q1":[84.4,27,32,32],"2026-Q2":[67.9,19,28,28],"2026-Q3":[83.3,25,30,30]},"1.15(b)":{"2023-Q3":[64.9,24,37,37],"2023-Q4":[47.7,21,44,44],"2024-Q1":[51.5,17,33,33],"2024-Q2":[46.7,14,30,30],"2024-Q3":[77.8,42,54,54],"2024-Q4":[61.8,21,34,34],"2025-Q1":[68.2,15,22,22],"2025-Q2":[80.8,21,26,26],"2025-Q3":[82.1,23,28,28],"2025-Q4":[74.4,29,39,39],"2026-Q1":[84.4,27,32,32],"2026-Q2":[67.9,19,28,28],"2026-Q3":[83.3,25,30,30]},"1.16":{"2023-Q3":[97.4,37,38,38],"2023-Q4":[77.3,34,44,44],"2024-Q1":[88.6,39,44,44],"2024-Q2":[92.7,38,41,41],"2024-Q3":[86.0,49,57,57],"2024-Q4":[84.2,48,57,57],"2025-Q1":[87.2,41,47,47],"2025-Q2":[86.4,57,66,66],"2025-Q3":[94.3,66,70,70],"2025-Q4":[87.5,35,40,40],"2026-Q1":[78.3,47,60,60],"2026-Q2":[81.5,53,65,65],"2026-Q3":[100.0,57,57,57]},"1.2":{"2023-Q3":[91.9,34,37,37],"2023-Q4":[90.9,40,44,44],"2024-Q1":[84.8,28,33,33],"2024-Q2":[80.0,24,30,30],"2024-Q3":[94.4,51,54,54],"2024-Q4":[94.1,32,34,34],"2025-Q1":[90.9,20,22,22],"2025-Q2":[100.0,26,26,26],"2025-Q3":[92.9,26,28,28],"2025-Q4":[84.6,33,39,39],"2026-Q1":[93.8,30,32,32],"2026-Q2":[78.6,22,28,28],"2026-Q3":[96.7,29,30,30]},"1.5":{"2024-Q2":[53.9,41,76,29],"2024-Q3":[28.7,37,129,52],"2024-Q4":[23.3,20,86,32],"2025-Q1":[33.9,19,56,22],"2025-Q2":[27.8,22,79,25],"2025-Q3":[16.9,15,89,28],"2025-Q4":[55.6,55,99,38],"2026-Q1":[36.7,33,90,31],"2026-Q2":[28.9,22,76,24],"2026-Q3":[28.9,22,76,24]},"1.6":{"2024-Q2":[14.5,11,76,29],"2024-Q3":[11.6,15,129,52],"2024-Q4":[17.4,15,86,32],"2025-Q1":[25.0,14,56,22],"2025-Q2":[27.8,22,79,25],"2025-Q3":[15.7,14,89,28],"2025-Q4":[45.5,45,99,38],"2026-Q1":[31.1,28,90,31],"2026-Q2":[25.0,19,76,24],"2026-Q3":[28.9,22,76,24]},"1.8":{"2023-Q3":[81.1,30,37,37],"2023-Q4":[75.0,33,44,44],"2024-Q1":[81.8,27,33,33],"2024-Q2":[43.3,13,30,30],"2024-Q3":[51.9,28,54,54],"2024-Q4":[50.0,17,34,34],"2025-Q1":[40.9,9,22,22],"2025-Q2":[69.2,18,26,26],"2025-Q3":[53.6,15,28,28],"2025-Q4":[30.8,12,39,39],"2026-Q1":[50.0,16,32,32],"2026-Q2":[57.1,16,28,28],"2026-Q3":[66.7,20,30,30]},"1.9":{"2024-Q2":[48.8,20,41,41],"2024-Q3":[63.2,36,57,57],"2024-Q4":[63.2,36,57,57],"2025-Q1":[68.1,32,47,47],"2025-Q2":[60.6,40,66,66],"2025-Q3":[62.9,44,70,70],"2025-Q4":[67.5,27,40,40],"2026-Q1":[70.0,42,60,60],"2026-Q2":[72.3,47,65,65],"2026-Q3":[86.0,49,57,57]},"1.10":{"2023-Q3":[96.3,26,27,27],"2023-Q4":[94.4,17,18,18],"2024-Q1":[100.0,19,19,19],"2024-Q2":[73.9,17,23,23],"2024-Q3":[96.3,26,27,27],"2024-Q4":[50.0,18,36,36],"2025-Q1":[55.9,19,34,34],"2025-Q2":[83.3,20,24,24],"2025-Q3":[100.0,29,29,29],"2025-Q4":[53.7,22,41,41],"2026-Q1":[48.5,16,33,33],"2026-Q2":[71.4,20,28,28],"2026-Q3":[88.0,22,25,25]},"1.11":{"2023-Q3":[37.0,10,27,27],"2023-Q4":[11.1,2,18,18],"2024-Q1":[36.8,7,19,19],"2024-Q2":[43.5,10,23,23],"2024-Q3":[29.6,8,27,27],"2024-Q4":[77.8,28,36,36],"2025-Q1":[88.2,30,34,34],"2025-Q2":[58.3,14,24,24],"2025-Q3":[20.7,6,29,29],"2025-Q4":[65.9,27,41,41],"2026-Q1":[66.7,22,33,33],"2026-Q2":[60.7,17,28,28],"2026-Q3":[52.0,13,25,25]},"1.12":{"2023-Q3":[11.1,3,27,27],"2023-Q4":[16.7,3,18,18],"2024-Q1":[36.8,7,19,19],"2024-Q2":[39.1,9,23,23],"2024-Q3":[18.5,5,27,27],"2024-Q4":[75.0,27,36,36],"2025-Q1":[64.7,22,34,34],"2025-Q2":[41.7,10,24,24],"2025-Q3":[20.7,6,29,29],"2025-Q4":[65.9,27,41,41],"2026-Q1":[66.7,22,33,33],"2026-Q2":[64.3,18,28,28],"2026-Q3":[32.0,8,25,25]},"1.13":{"2023-Q4":[0.0,0,1,1],"2024-Q2":[0.0,0,23,23],"2024-Q3":[0.0,0,27,27],"2024-Q4":[0.0,0,36,36],"2025-Q1":[0.0,0,34,34],"2025-Q2":[0.0,0,24,24],"2025-Q3":[13.8,4,29,29],"2025-Q4":[4.9,2,41,41],"2026-Q1":[33.3,11,33,33],"2026-Q2":[10.7,3,28,28],"2026-Q3":[12.0,3,25,25]},"1.14":{"2023-Q4":[0.0,0,1,1],"2024-Q2":[0.0,0,23,23],"2024-Q3":[0.0,0,27,27],"2024-Q4":[0.0,0,36,36],"2025-Q1":[61.8,21,34,34],"2025-Q2":[54.2,13,24,24],"2025-Q3":[100.0,29,29,29],"2025-Q4":[95.1,39,41,41],"2026-Q1":[100.0,33,33,33],"2026-Q2":[96.4,27,28,28],"2026-Q3":[100.0,25,25,25]},"4.1":{"2023-Q3":[2.7,1,37,37],"2023-Q4":[6.8,3,44,44],"2024-Q1":[3.0,1,33,33],"2024-Q2":[3.3,1,30,30],"2024-Q3":[7.4,4,54,54],"2024-Q4":[2.9,1,34,34],"2025-Q1":[0.0,0,22,22],"2025-Q2":[11.5,3,26,26],"2025-Q3":[10.7,3,28,28],"2025-Q4":[33.3,13,39,39],"2026-Q1":[21.9,7,32,32],"2026-Q2":[28.6,8,28,28],"2026-Q3":[43.3,13,30,30]},"1.15(b)-Hb":{"2023-Q3":[94.6,35,37,37],"2023-Q4":[90.9,40,44,44],"2024-Q1":[93.9,31,33,33],"2024-Q2":[93.3,28,30,30],"2024-Q3":[98.1,53,54,54],"2024-Q4":[91.2,31,34,34],"2025-Q1":[100.0,22,22,22],"2025-Q2":[100.0,26,26,26],"2025-Q3":[96.4,27,28,28],"2025-Q4":[100.0,39,39,39],"2026-Q1":[96.9,31,32,32],"2026-Q2":[92.9,26,28,28],"2026-Q3":[100.0,30,30,30]},"1.15(b)-BP":{"2023-Q3":[94.6,35,37,37],"2023-Q4":[81.8,36,44,44],"2024-Q1":[97.0,32,33,33],"2024-Q2":[93.3,28,30,30],"2024-Q3":[88.9,48,54,54],"2024-Q4":[91.2,31,34,34],"2025-Q1":[86.4,19,22,22],"2025-Q2":[100.0,26,26,26],"2025-Q3":[100.0,28,28,28],"2025-Q4":[97.4,38,39,39],"2026-Q1":[93.8,30,32,32],"2026-Q2":[92.9,26,28,28],"2026-Q3":[96.7,29,30,30]},"1.15(b)-Urine":{"2023-Q3":[73.0,27,37,37],"2023-Q4":[65.9,29,44,44],"2024-Q1":[75.8,25,33,33],"2024-Q2":[86.7,26,30,30],"2024-Q3":[57.4,31,54,54],"2024-Q4":[67.6,23,34,34],"2025-Q1":[68.2,15,22,22],"2025-Q2":[92.3,24,26,26],"2025-Q3":[89.3,25,28,28],"2025-Q4":[89.7,35,39,39],"2026-Q1":[93.8,30,32,32],"2026-Q2":[67.9,19,28,28],"2026-Q3":[93.3,28,30,30]},"1.15(b)-Weight":{"2023-Q3":[97.3,36,37,37],"2023-Q4":[84.1,37,44,44],"2024-Q1":[93.9,31,33,33],"2024-Q2":[96.7,29,30,30],"2024-Q3":[90.7,49,54,54],"2024-Q4":[88.2,30,34,34],"2025-Q1":[86.4,19,22,22],"2025-Q2":[100.0,26,26,26],"2025-Q3":[100.0,28,28,28],"2025-Q4":[94.9,37,39,39],"2026-Q1":[93.8,30,32,32],"2026-Q2":[89.3,25,28,28],"2026-Q3":[100.0,30,30,30]},"1.15(b)-Scan":{"2023-Q3":[86.5,32,37,37],"2023-Q4":[88.6,39,44,44],"2024-Q1":[93.9,31,33,33],"2024-Q2":[76.7,23,30,30],"2024-Q3":[94.4,51,54,54],"2024-Q4":[79.4,27,34,34],"2025-Q1":[90.9,20,22,22],"2025-Q2":[100.0,26,26,26],"2025-Q3":[92.9,26,28,28],"2025-Q4":[94.9,37,39,39],"2026-Q1":[87.5,28,32,32],"2026-Q2":[92.9,26,28,28],"2026-Q3":[100.0,30,30,30]},"1.15(b)-TT":{"2023-Q3":[100.0,37,37,37],"2023-Q4":[97.7,43,44,44],"2024-Q1":[100.0,33,33,33],"2024-Q2":[93.3,28,30,30],"2024-Q3":[92.6,50,54,54],"2024-Q4":[85.3,29,34,34],"2025-Q1":[100.0,22,22,22],"2025-Q2":[100.0,26,26,26],"2025-Q3":[100.0,28,28,28],"2025-Q4":[100.0,39,39,39],"2026-Q1":[96.9,31,32,32],"2026-Q2":[89.3,25,28,28],"2026-Q3":[100.0,30,30,30]},"1.15(b)-IFA":{"2023-Q3":[89.2,33,37,37],"2023-Q4":[95.5,42,44,44],"2024-Q1":[87.9,29,33,33],"2024-Q2":[76.7,23,30,30],"2024-Q3":[44.4,24,54,54],"2024-Q4":[79.4,27,34,34],"2025-Q1":[90.9,20,22,22],"2025-Q2":[92.3,24,26,26],"2025-Q3":[100.0,28,28,28],"2025-Q4":[100.0,39,39,39],"2026-Q1":[96.9,31,32,32],"2026-Q2":[96.4,27,28,28],"2026-Q3":[100.0,30,30,30]}};
+const TST = {"1.1":{"2025-Q2":63.7,"2025-Q3":64.8,"2025-Q4":60.9,"2026-Q1":59.2,"2026-Q2":62.2,"2026-Q3":64.1},"1.16":{"2025-Q2":88.8,"2025-Q3":88.4,"2025-Q4":84.0,"2026-Q1":83.5,"2026-Q2":83.3,"2026-Q3":83.8},"1.2":{"2025-Q2":95.8,"2025-Q3":96.2,"2025-Q4":96.2,"2026-Q1":96.1,"2026-Q2":96.6,"2026-Q3":97.6},"1.5":{"2025-Q2":37.2,"2025-Q3":40.2,"2025-Q4":43.2,"2026-Q1":42.6,"2026-Q2":38.9,"2026-Q3":38.3},"1.6":{"2025-Q2":34.1,"2025-Q3":36.4,"2025-Q4":39.5,"2026-Q1":38.9,"2026-Q2":35.0,"2026-Q3":33.6},"1.8":{"2025-Q2":38.2,"2025-Q3":44.1,"2025-Q4":52.5,"2026-Q1":56.0,"2026-Q2":46.9,"2026-Q3":46.4},"1.9":{"2025-Q2":74.4,"2025-Q3":70.2,"2025-Q4":63.7,"2026-Q1":68.4,"2026-Q2":48.6,"2026-Q3":61.6},"1.10":{"2025-Q2":78.1,"2025-Q3":82.7,"2025-Q4":82.4,"2026-Q1":83.7,"2026-Q2":84.0,"2026-Q3":85.2},"1.13":{"2025-Q2":20.8,"2025-Q3":19.6,"2025-Q4":28.1,"2026-Q1":32.4,"2026-Q2":30.5,"2026-Q3":29.1},"1.14":{"2025-Q2":83.1,"2025-Q3":86.1,"2025-Q4":76.8,"2026-Q1":78.5,"2026-Q2":73.9,"2026-Q3":75.3},"4.1":{"2025-Q2":31.2,"2025-Q3":32.5,"2025-Q4":36.8,"2026-Q1":37.6,"2026-Q2":36.3,"2026-Q3":38.6},"1.15(a)":{"2025-Q2":61.2,"2025-Q3":64.2,"2025-Q4":52.1,"2026-Q1":52.6,"2026-Q2":52.0,"2026-Q3":53.9},"1.15(b)":{"2026-Q3":25.5},"1.11":{"2026-Q3":50.3},"1.12":{"2026-Q3":36.1}};
 const TEN = {"1.1": "Pregnant women registered for ANC in the first trimester", "1.15(a)": "Pregnant women with 4+ ANC visits", "1.15(b)": "4+ ANC check-ups with all applicable tests (of all registered PW)", "1.16": "Children fully immunized (9–12 months)", "1.2": "Institutional deliveries", "1.5": "Persons screened for hypertension", "1.6": "Persons screened for diabetes", "1.8": "Pregnant women taking supplementary nutrition regularly", "1.9": "Children 6 months–6 years taking supplementary nutrition regularly", "1.10": "Measurement efficiency of children enrolled at AWCs", "1.11": "Proxy: height/length accuracy by AWW (±1 cm)", "1.12": "Proxy: weight accuracy by AWW (±200 g)", "1.13": "AWCs with functional toilets", "1.14": "AWCs with drinking water facility", "4.1": "Households with functional tap water (FHTC)", "1.15(b)-Hb": "ANC check-ups with Hb / blood test (any of first 4 visits)", "1.15(b)-BP": "ANC check-ups with Blood pressure check (any of first 4 visits)", "1.15(b)-Urine": "ANC check-ups with Urine test (any of first 4 visits)", "1.15(b)-Weight": "ANC check-ups with Weight check (any of first 4 visits)", "1.15(b)-Scan": "ANC check-ups with Sonography / ultrasound (any of first 4 visits)", "1.15(b)-TT": "ANC check-ups with TT/Td injection (any of first 4 visits)", "1.15(b)-IFA": "ANC check-ups with Folic acid / IFA tablets (any of first 4 visits)"};
 const THI = {"1.1": "पहली तिमाही में ANC हेतु पंजीकृत गर्भवती महिलाओं का प्रतिशत", "1.15(a)": "4+ ANC विज़िट वाली गर्भवती महिलाएँ", "1.15(b)": "4+ ANC जाँच (सभी पंजीकृत गर्भवती महिलाओं में)", "1.16": "पूर्ण टीकाकरण प्राप्त बच्चों (9-11 माह) का प्रतिशत", "1.2": "कुल प्रसवों में संस्थागत प्रसवों का प्रतिशत", "1.5": "लक्षित जनसंख्या में उच्च रक्तचाप जाँच कराने वाले व्यक्तियों का प्रतिशत", "1.6": "लक्षित जनसंख्या में मधुमेह जाँच कराने वाले व्यक्तियों का प्रतिशत", "1.8": "नियमित पूरक पोषाहार लेने वाली गर्भवती महिलाओं का प्रतिशत", "1.9": "नियमित पूरक पोषाहार लेने वाले 6 माह–6 वर्ष के बच्चों का प्रतिशत", "1.10": "आँगनवाड़ी केंद्रों पर नामांकित बच्चों की माप-दक्षता", "1.11": "प्रॉक्सी: ऊँचाई/लंबाई की सटीकता (±1 सेमी)", "1.12": "प्रॉक्सी: वजन की सटीकता (±200 ग्राम)", "1.13": "क्रियाशील शौचालय वाले आँगनवाड़ी केंद्रों का प्रतिशत", "1.14": "पेयजल सुविधा वाले आँगनवाड़ी केंद्रों का प्रतिशत", "4.1": "क्रियाशील नल जल कनेक्शन (FHTC) वाले परिवारों का प्रतिशत", "1.15(b)-Hb": "ANC जाँच में हीमोग्लोबिन / रक्त जाँच (पहली 4 विज़िट में से किसी में)", "1.15(b)-BP": "ANC जाँच में रक्तचाप जाँच (पहली 4 विज़िट में से किसी में)", "1.15(b)-Urine": "ANC जाँच में मूत्र जाँच (पहली 4 विज़िट में से किसी में)", "1.15(b)-Weight": "ANC जाँच में वजन जाँच (पहली 4 विज़िट में से किसी में)", "1.15(b)-Scan": "ANC जाँच में सोनोग्राफी / अल्ट्रासाउंड (पहली 4 विज़िट में से किसी में)", "1.15(b)-TT": "ANC जाँच में टीटी/टीडी इंजेक्शन (पहली 4 विज़िट में से किसी में)", "1.15(b)-IFA": "ANC जाँच में फोलिक एसिड / आयरन गोली (पहली 4 विज़िट में से किसी में)"};
 const TNOTE={'1.5':'Apr–Jun 2024 included medical-store screenings, so it is excluded from comparison; standardised from Jul–Sep 2024. / अप्रैल–जून 2024 में मेडिकल स्टोर की जाँच शामिल थी, इसलिए तुलना से बाहर; जुलाई–सितंबर 2024 से मानकीकृत।','1.14':'Definition broadened from Jan–Mar 2025 (school/village water counted); earlier values are not comparable. / जनवरी–मार्च 2025 से परिभाषा व्यापक (विद्यालय/गाँव का पानी शामिल); पहले के मान तुलनीय नहीं।','1.13':'Samples of fewer than 5 visits are shown hollow. / 5 से कम नमूने वाले बिंदु खोखले हैं।'};
 TNOTE['1.6']=TNOTE['1.5'];
 const SUBNOTE='Derived indicator: a woman counts as “Yes” if the item was recorded in at least one of her first 4 ANC visits; rebuilt from the visit-wise checklist and not an officially defined KPI. Values are pooled across all monitored women (weighted average). / व्युत्पन्न संकेतक: यदि पहली 4 ANC विज़िट में से किसी एक में जाँच दर्ज है तो “हाँ” गिना गया; यह विज़िट-वार चेकलिस्ट से बनाया गया है, आधिकारिक परिभाषित KPI नहीं। मान सभी निगरानी की गई महिलाओं के भारित औसत हैं।';
-Object.keys(TR).filter(k=>k.startsWith('1.15(b)-')).forEach(k=>TNOTE[k]=SUBNOTE+' '+TNOTE['1.13']);
+Object.keys(TR).filter(k=>k.startsWith('1.15(b)-')).forEach(k=>TNOTE[k]=[SUBNOTE,TNOTE['1.13']]);
 const MON=['Jan–Mar','Apr–Jun','Jul–Sep','Oct–Dec'];
-const plab=p=>p==='2023-Q3'?'Aug–Sep 2023':MON[+p[6]-1]+' '+p.slice(0,4);
+const plab=p=>p==='2023-Q3'?(LANG==='hi'?'अगस्त–सितंबर 2023':'Aug–Sep 2023'):MQ[LANG][+p[6]-1]+' '+p.slice(0,4);
 function comparable(k,p,r){ if((k==='1.5'||k==='1.6')&&p==='2024-Q2') return false; if(k==='1.14'&&p<'2025-Q1') return false; return r[3]>=5; }
 function buildTrends(){
   const box=document.getElementById('trendBox'), per=periodSel.value, sel=kpiSel.value;
-  if(!TR[sel]){ box.innerHTML='<div class="tcard">No quarterly trend for this KPI. / इस संकेतक के लिए तिमाही रुझान उपलब्ध नहीं है।</div>'; return; }
+  if(!TR[sel]){ box.innerHTML='<div class="tcard">'+tl('No quarterly trend for this KPI. / इस संकेतक के लिए तिमाही रुझान उपलब्ध नहीं है।')+'</div>'; return; }
   box.innerHTML=[sel].map(k=>{
     const ps=Object.keys(TR[k]).sort().filter(p=>per==='ALL'||p<=per), W=620,H=190,L=34,R=14,T=16,B=34, step=(W-L-R)/Math.max(1,ps.length-1);
     const X=i=>L+i*step, Y=v=>T+(H-T-B)*(1-v/100);
     const ok=ps.map(p=>comparable(k,p,TR[k][p]));
     let line='',seg=[]; ps.forEach((p,i)=>{ if(ok[i]) seg.push(X(i)+','+Y(TR[k][p][0])); else { if(seg.length>1) line+=`<polyline points="${seg.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2"/>`; seg=[]; }}); if(seg.length>1) line+=`<polyline points="${seg.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2"/>`;
+    const sp=ps.map((p,i)=>[i,(TST[k]||{})[p]]).filter(x=>x[1]!=null), stl=(sp.length>1?`<polyline points="${sp.map(x=>X(x[0])+','+Y(x[1])).join(' ')}" fill="none" stroke="#6d6a60" stroke-width="1.6" stroke-dasharray="5 4"/>`:'')+sp.map(x=>`<rect x="${X(x[0])-3}" y="${Y(x[1])-3}" width="6" height="6" fill="#6d6a60" transform="rotate(45 ${X(x[0])} ${Y(x[1])})"/>`).join('');
     const grid=[0,25,50,75,100].map(v=>`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${L-5}" y="${Y(v)+3}" font-size="9" text-anchor="end" fill="var(--muted)">${v}</text>`).join('');
     const pts=ps.map((p,i)=>{const v=TR[k][p][0]; return (p===per?`<rect x="${X(i)-step/2}" y="${T-8}" width="${step}" height="${H-T-B+8}" fill="var(--accent)" opacity=".1"/>`:'')+`<circle cx="${X(i)}" cy="${Y(v)}" r="3.5" fill="${ok[i]?'var(--accent)':'#fff'}" stroke="var(--accent)" stroke-width="1.5"/><text x="${X(i)}" y="${Y(v)-7}" font-size="9" text-anchor="middle" fill="var(--ink)">${Math.round(v)}</text><text x="${X(i)}" y="${H-18}" font-size="8" text-anchor="middle" fill="var(--muted)" transform="rotate(35 ${X(i)} ${H-18})">${plab(p)}</text>`}).join('');
-    const rows=ps.map((p,i)=>{ const r=TR[k][p]; let prev=-1; for(let j=i-1;j>=0;j--) if(ok[j]){prev=j;break;} const d=ok[i]&&prev>=0&&prev===i-1?Math.round(r[0])-Math.round(TR[k][ps[prev]][0]):null; return `<tr><td>${plab(p)}</td><td>${Math.round(r[0])}%${ok[i]?'':' ◦'}</td><td>${r[3]}</td><td>${d==null?'—':(d>0?'▲ +':d<0?'▼ ':'► ')+d+(d?' pp':'')}</td></tr>`;}).join('');
+    const rows=ps.map((p,i)=>{ const r=TR[k][p]; let prev=-1; for(let j=i-1;j>=0;j--) if(ok[j]){prev=j;break;} const d=ok[i]&&prev>=0&&prev===i-1?Math.round(r[0])-Math.round(TR[k][ps[prev]][0]):null; return `<tr><td>${plab(p)}</td><td>${Math.round(r[0])}%${ok[i]?'':' ◦'}</td><td>${r[3]}</td><td>${d==null?'—':(d>0?'▲ +':d<0?'▼ ':'► ')+d+(d?' pp':'')}</td><td>${(TST[k]||{})[p]!=null?Math.round(TST[k][p])+'%':'—'}</td></tr>`;}).join('');
     const c=ps.filter((p,i)=>ok[i]), v=p=>Math.round(TR[k][p][0]); let sum='';
     if(c.length>1){ const mx=c.reduce((a,b)=>v(b)>v(a)?b:a), mn=c.reduce((a,b)=>v(b)<v(a)?b:a), f=c[0], l=c[c.length-1], pv=c[c.length-2], d=v(l)-v(pv);
-      sum=`Began at ${v(f)}% (${plab(f)}); peak ${v(mx)}% (${plab(mx)}), low ${v(mn)}% (${plab(mn)}). Latest ${v(l)}% in ${plab(l)}, ${d>=0?'+':''}${d} pp vs previous quarter.<br>शुरुआत ${v(f)}% (${plab(f)}); उच्चतम ${v(mx)}% (${plab(mx)}), न्यूनतम ${v(mn)}% (${plab(mn)}). नवीनतम ${v(l)}% (${plab(l)}), पिछली तिमाही से ${d>=0?'+':''}${d} pp।`; }
-    return `<div class="tcard"><h3>${k} ${TEN[k]}</h3><div class="hi">${THI[k]}</div><div class="row"><svg viewBox="0 0 ${W} ${H}">${grid}${line}${pts}</svg><table><tr><th>Quarter / तिमाही</th><th>%</th><th>n</th><th>QoQ</th></tr>${rows}</table></div><p class="sum">${sum}</p>${TNOTE[k]?`<p class="note">⚑ ${TNOTE[k]}</p>`:''}</div>`;
+      sum=(LANG==='hi'?1:0)?`शुरुआत ${v(f)}% (${plab(f)}); उच्चतम ${v(mx)}% (${plab(mx)}), न्यूनतम ${v(mn)}% (${plab(mn)}). नवीनतम ${v(l)}% (${plab(l)}), पिछली तिमाही से ${d>=0?'+':''}${d} pp।`:`Began at ${v(f)}% (${plab(f)}); peak ${v(mx)}% (${plab(mx)}), low ${v(mn)}% (${plab(mn)}). Latest ${v(l)}% in ${plab(l)}, ${d>=0?'+':''}${d} pp vs previous quarter.`; }
+    return `<div class="tcard"><h3>${k} ${LANG==='hi'?THI[k]:TEN[k]}</h3><div class="row"><svg viewBox="0 0 ${W} ${H}">${grid}${stl}${line}${pts}</svg><table><tr><th>${tl('Quarter / तिमाही')}</th><th>%</th><th>n</th><th>${LANG==='hi'?'परिवर्तन':'QoQ'}</th><th>${tl('State / राज्य %')}</th></tr>${rows}</table></div><p class="sum">${sum}</p>${TNOTE[k]?`<p class="note">⚑ ${Array.isArray(TNOTE[k])?TNOTE[k].map(tl).join(' '):tl(TNOTE[k])}</p>`:''}</div>`;
   }).join('');
 }
 function showTab(t){
@@ -5357,16 +5392,16 @@ document.getElementById('tabTrend').onclick=()=>showTab('Trend');
 [kpiSel,periodSel].forEach(e=>e.addEventListener('change',()=>{ if(document.getElementById('viewList').style.display==='block') buildList(); if(document.getElementById('viewTrend').style.display==='block') buildTrends(); }));
 document.getElementById('btnXls').onclick=()=>{
   const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-  const head=['Rank / क्रम','Gram Panchayat / ग्राम पंचायत','गाँव (हिन्दी)','Rate % / दर','Numerator / अंश','Denominator / हर','Visits / भ्रमण','Status / स्थिति','Beneficiary / लाभार्थी','Husband / Father / पति / पिता','Village / गाँव','Violation / उल्लंघन'];
-  let h=`<html><head><meta charset="utf-8"></head><body><table border="1"><tr><td colspan="12"><b>${esc(document.getElementById('ltTitle').textContent)}</b></td></tr><tr>${head.map(x=>`<th style="background:#f1eee5">${esc(x)}</th>`).join('')}</tr>`;
-  listRows.forEach(r=>{ const c=r.rec, rs=r.span>1?` rowspan="${r.span}"`:''; h+='<tr>'+(r.first?`<td${rs}>${r.rank}</td><td${rs}>${esc(r.en)}</td><td${rs}>${esc(r.hi)}</td><td${rs}>${c?c.rate:''}</td><td${rs}>${c?c.num:''}</td><td${rs}>${c?c.den:''}</td><td${rs}>${c?c.n:''}</td><td${rs} style="background:${r.hex}${/^(#fdd835|#7cb342|#d9d5c9)$/.test(r.hex)?';color:#000':';color:#fff'}">${esc(r.st)}</td>`:'')+`<td>${esc(r.ben)}</td><td>${esc(r.fam)}</td><td>${esc(r.vil)}</td><td>${esc(r.why)}</td></tr>`; });
+  const head=['Rank / क्रम','Gram Panchayat / ग्राम पंचायत','Rate % / दर','Numerator / अंश','Denominator / हर','Visits / भ्रमण','Status / स्थिति','Beneficiary / लाभार्थी','Husband / Father / पति / पिता','Village / गाँव','Violation / उल्लंघन'].map(tl);
+  let h=`<html><head><meta charset="utf-8"></head><body><table border="1"><tr><td colspan="11"><b>${esc(tl('Salarpur Nigrani Darpan / सलारपुर निगरानी दर्पण'))} — ${esc(document.getElementById('ltTitle').textContent)}</b></td></tr><tr>${head.map(x=>`<th style="background:#f1eee5">${esc(x)}</th>`).join('')}</tr>`;
+  listRows.forEach(r=>{ const c=r.rec, rs=r.span>1?` rowspan="${r.span}"`:''; h+='<tr>'+(r.first?`<td${rs}>${r.rank}</td><td${rs}>${esc(LANG==='hi'?(r.hi||r.en):r.en)}</td><td${rs}>${c?c.rate:''}</td><td${rs}>${c?c.num:''}</td><td${rs}>${c?c.den:''}</td><td${rs}>${c?c.n:''}</td><td${rs} style="background:${r.hex}${/^(#fdd835|#7cb342|#d9d5c9)$/.test(r.hex)?';color:#000':';color:#fff'}">${esc(r.st)}</td>`:'')+`<td>${esc(r.ben)}</td><td>${esc(r.fam)}</td><td>${esc(r.vil)}</td><td>${esc(r.why)}</td></tr>`; });
   h+='</table></body></html>';
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob(['\ufeff'+h],{type:'application/vnd.ms-excel;charset=utf-8'}));
-  a.download=`priority_${kpiSel.value.replace(/[^\w.-]/g,'_')}_${periodSel.value}.xls`;
+  a.download=`Salarpur_Nigrani_Darpan_priority_${kpiSel.value.replace(/[^\w.-]/g,'_')}_${periodSel.value}.xls`;
   document.body.appendChild(a); a.click(); a.remove();
 };
-update();
+applyLang();
 </script>
 </body>
 </html>
