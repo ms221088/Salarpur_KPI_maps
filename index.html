@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <title>Salarpur Nigrani Darpan | सलारपुर निगरानी दर्पण</title>
@@ -5254,7 +5254,7 @@ const paths = document.querySelectorAll('path[data-lgd]');
 const gpPaths = document.querySelectorAll('path[data-type="gp"]');
 
 
-let LANG='hi'; try{ LANG=localStorage.getItem('lang')||'hi'; }catch(e){}
+let LANG='hi';
 function tl(s){ s=String(s==null?'':s); const m=s.match(/\s\/\s(?=[\u0900-\u097F])/); if(!m) return s; return LANG==='hi'?s.slice(m.index+m[0].length):s.slice(0,m.index); }
 const HIGP={}; gpPaths.forEach(p=>{ HIGP[p.getAttribute('data-lgd')]=p.getAttribute('data-name-hi')||''; });
 const MQ={en:['Jan–Mar','Apr–Jun','Jul–Sep','Oct–Dec'],hi:['जनवरी–मार्च','अप्रैल–जून','जुलाई–सितंबर','अक्टूबर–दिसंबर']};
@@ -5264,7 +5264,7 @@ function durText(p){ const M=LANG==='hi'?['','जनवरी','फ़रवर�
 function kpiLabel(k){ return k+' — '+(LANG==='hi'?(THI[k]||META[k].title):(META[k]?META[k].title:k)); }
 function walkText(){ const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{ const t=n.parentNode&&n.parentNode.nodeName; return /^(SCRIPT|STYLE|OPTION|OPTGROUP|svg|text|tspan|path)$/i.test(t)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT; }}); let n; while(n=w.nextNode()){ if(n._o===undefined) n._o=n.nodeValue; if(/[\u0900-\u097F]/.test(n._o)) n.nodeValue=tl(n._o); } }
 function applyLang(){
-  document.documentElement.lang=LANG; try{localStorage.setItem('lang',LANG);}catch(e){}
+  document.documentElement.lang=LANG; 
   document.getElementById('lgHi').classList.toggle('on',LANG==='hi'); document.getElementById('lgEn').classList.toggle('on',LANG==='en');
   walkText();
   const OG={'Health':'स्वास्थ्य','1.15(b) sub-maps':'1.15(b) उप-मानचित्र','ICDS':'आईसीडीएस','Basic Infra':'आधारभूत संरचना'};
